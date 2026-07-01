@@ -4,11 +4,11 @@ mkdir work.lib
 echo "define work_lib ./work.lib" >> ./cds.lib
 echo "define WORK work_lib" >> ./hdl.var
 
-# Compile HDL sources
+#Compile HDL sources
 xmvlog -MESS -linedebug ./*v
 
 # Elaborate compiled sources
-xmelab -MESS -access rwc tb_pipeline
+xmelab -MESS -access rwc tb_interrupt_controller
 
-# run simulation in CLI mode
-xmsim -MESS tb_pipeline _gui
+#r run simulation in CLI mode
+xmsim -MESS tb_data_bus_driver
